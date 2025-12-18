@@ -1,0 +1,237 @@
+.section {
+  min-height: 100vh;
+  padding-top: 120px;
+  padding-bottom: var(--spacing-xl);
+  background: var(--color-black);
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-xl);
+}
+
+.imageSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.mainImage {
+  width: 100%;
+  aspect-ratio: 5 / 6;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--color-gray-medium);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.thumbnails {
+  display: flex;
+  gap: var(--spacing-sm);
+}
+
+.thumbnail {
+  flex: 1;
+  aspect-ratio: 5 / 6;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 2px solid transparent;
+  transition: border-color var(--transition-fast);
+  cursor: pointer;
+  background: var(--color-gray-medium);
+}
+
+.thumbnail:hover {
+  border-color: var(--color-gray-light);
+}
+
+.thumbnail.thumbnailActive {
+  border-color: var(--color-gold);
+}
+
+.thumbnailImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.detailSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.name {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--color-off-white);
+  letter-spacing: -1px;
+}
+
+.price {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  color: var(--color-gold);
+}
+
+.description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--color-gray-light);
+  margin-bottom: var(--spacing-sm);
+}
+
+.label {
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-off-white);
+  margin-bottom: var(--spacing-sm);
+  letter-spacing: 0.5px;
+}
+
+.sizeSelector {
+  margin-top: var(--spacing-sm);
+}
+
+.sizeOptions {
+  display: flex;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+}
+
+.sizeButton {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-off-white);
+  background: var(--color-gray-medium);
+  border: 2px solid transparent;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.sizeButton:hover {
+  border-color: var(--color-gray-light);
+}
+
+.sizeButton.sizeButtonActive {
+  background: var(--color-gold);
+  color: var(--color-black);
+  border-color: var(--color-gold);
+}
+
+.quantitySelector {
+  margin-top: var(--spacing-sm);
+}
+
+.quantityControls {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.quantityButton {
+  width: 40px;
+  height: 40px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-off-white);
+  background: var(--color-gray-medium);
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quantityButton:hover {
+  background: var(--color-gray-light);
+}
+
+.quantityValue {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-off-white);
+  min-width: 40px;
+  text-align: center;
+}
+
+.addToCartButton {
+  margin-top: var(--spacing-md);
+  padding: 1.25rem 3rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: var(--color-black);
+  background: var(--color-gold);
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.addToCartButton::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.addToCartButton:hover::before {
+  width: 400px;
+  height: 400px;
+}
+
+.addToCartButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+
+  .detailSection {
+    order: 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding-top: 100px;
+  }
+
+  .thumbnails {
+    overflow-x: auto;
+  }
+
+  .thumbnail {
+    min-width: 80px;
+  }
+}
