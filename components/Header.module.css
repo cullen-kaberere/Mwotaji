@@ -150,6 +150,7 @@
     right: -100%;
     width: 40%;
     height: 30vh;
+    border-radius: 50px;
     background: rgba(26, 26, 26, 0.98);
     backdrop-filter: blur(20px);
     flex-direction: column;
