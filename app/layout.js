@@ -4,7 +4,7 @@ import { CartProvider } from "@/context/CartContext"
 export const metadata = {
   title: "Mwotaji Official | Wear Your Purpose",
   description: "Premium African streetwear brand - Confidence, luxury, and motivation",
-  generator: "v0.app",
+  generator: "cullen",
   icons: {
     icon: [
       {
