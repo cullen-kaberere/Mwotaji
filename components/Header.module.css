@@ -3,7 +3,7 @@
   top: 20px;
   left: 50%;
   transform: translateX(-50%);
-  width: 45%;
+  width: 35%;
   max-width: 1100px;
   z-index: var(--z-header);
   transition: all var(--transition-base);
@@ -149,7 +149,7 @@
     top: 0;
     right: -100%;
     width: 70%;
-    height: 100vh;
+    height: 30vh;
     background: rgba(26, 26, 26, 0.98);
     backdrop-filter: blur(20px);
     flex-direction: column;

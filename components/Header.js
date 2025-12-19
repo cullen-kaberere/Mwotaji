@@ -34,9 +34,9 @@ export default function Header() {
           <Link href="/shop" onClick={() => setMenuOpen(false)}>
             Shop
           </Link>
-          <Link href="/about" onClick={() => setMenuOpen(false)}>
+          {/* <Link href="/about" onClick={() => setMenuOpen(false)}>
             About
-          </Link>
+          </Link> */}
         </nav>
 
         <div className={styles.rightSection}>
