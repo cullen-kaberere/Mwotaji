@@ -1,4 +1,5 @@
 import "./globals.css"
+import { CartProvider } from "@/context/CartContext"
 
 export const metadata = {
   title: "Mwotaji Official | Wear Your Purpose",
@@ -26,7 +27,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="dark">{children}</body>
+      <body className="dark">
+        <CartProvider>
+          {children}
+        </CartProvider>
+      </body>
     </html>
   )
 }

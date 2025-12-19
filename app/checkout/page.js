@@ -9,11 +9,11 @@ export const metadata = {
 
 export default function Checkout() {
   return (
-    <CartProvider>
+    <>
       <Header />
       <main>
         <CheckoutPage />
       </main>
-    </CartProvider>
+    </>
   )
 }

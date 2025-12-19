@@ -7,7 +7,7 @@ import ShopTeaser from "@/components/ShopTeaser"
 
 export default function HomePage() {
   return (
-    <CartProvider>
+    <>
       <Header />
       <main>
         <Hero />
@@ -15,6 +15,6 @@ export default function HomePage() {
         <LifestyleSection />
         <ShopTeaser />
       </main>
-    </CartProvider>
+    </>
   )
 }

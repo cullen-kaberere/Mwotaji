@@ -31,11 +31,11 @@ export default async function ProductPage({ params }) {
   }
 
   return (
-    <CartProvider>
+    <>
       <Header />
       <main>
         <ProductDetail product={product} />
       </main>
-    </CartProvider>
+    </>
   )
 }

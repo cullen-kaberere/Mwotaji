@@ -10,11 +10,11 @@ export const metadata = {
 
 export default function ShopPage() {
   return (
-    <CartProvider>
+    <>
       <Header />
       <main>
         <ProductGrid products={products} />
       </main>
-    </CartProvider>
+    </>
   )
 }
