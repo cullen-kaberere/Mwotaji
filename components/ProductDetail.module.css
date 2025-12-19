@@ -2,7 +2,7 @@
   min-height: 100vh;
   padding-top: 120px;
   padding-bottom: 6rem;
-  background: var(--green-bg);
+  background: #e8f3ee;
 }
 
 .container {
@@ -174,14 +174,14 @@
 
 .addToCartButton {
   margin-top: var(--spacing-md);
-  padding: 1.25rem 3rem;
+  padding: 1rem 3rem;
   font-size: 1.1rem;
   font-weight: 600;
   letter-spacing: 1px;
   color: white;
-  background: var(--color-gold);
+  background: #0f3d2e;
   border: 2px solid ;
-  border-radius: var(--radius-sm);
+  border-radius: 999px;
   cursor: pointer;
   transition: all var(--transition-base);
   position: relative;
@@ -208,6 +208,7 @@
 
 .addToCartButton:hover {
   transform: translateY(-2px);
+  background: #1f6f54;
   box-shadow: 0 10px 30px rgba(255, 255, 255, 0.4);
 }
 

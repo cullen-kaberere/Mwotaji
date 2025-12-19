@@ -1,36 +1,32 @@
 "use client"
 
-import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import styles from "./ProductCard.module.css"
 
 export default function ProductCard({ product }) {
-  const [isHovered, setIsHovered] = useState(false)
-
   return (
-    <Link
-      href={`/product/${product.slug}`}
-      className={styles.card}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      <div className={styles.imageWrapper}>
+    <Link href={`/product/${product.slug}`} className={styles.card}>
+      <div className={styles.imageWrap}>
         <Image
-          src={product.image || "/placeholder.svg"}
+          src={product.images[0]}
           alt={product.name}
-          width={500}
-          height={600}
-          className={`${styles.image} ${isHovered ? styles.zoomed : ""}`}
+          fill
+          className={styles.imagePrimary}
         />
-        <div className={`${styles.overlay} ${isHovered ? styles.overlayVisible : ""}`}>
-          <span className={styles.viewProduct}>View Product</span>
-        </div>
+        {product.images[1] && (
+          <Image
+            src={product.images[1]}
+            alt={product.name}
+            fill
+            className={styles.imageSecondary}
+          />
+        )}
       </div>
 
-      <div className={styles.info}>
+      <div className={styles.meta}>
         <h3 className={styles.name}>{product.name}</h3>
-        <p className={styles.price}>KES {product.price.toLocaleString()}</p>
+        <span className={styles.price}>KES {product.price.toLocaleString()}</span>
       </div>
     </Link>
   )
