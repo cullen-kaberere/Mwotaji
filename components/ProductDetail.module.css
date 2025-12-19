@@ -1,34 +1,36 @@
 .section {
   min-height: 100vh;
-  padding-top: 120px;
-  padding-bottom: 6rem;
+  padding-top: 110px;
+  padding-bottom: 5rem;
   background: #e8f3ee;
 }
 
 .container {
-  max-width: 1400px;
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 0 var(--spacing-md);
+  padding: 0 1.5rem;
 }
 
+/* Layout */
 .grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--spacing-xl);
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 4rem;
 }
 
+/* Images */
 .imageSection {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-md);
+  gap: 1rem;
 }
 
 .mainImage {
   width: 100%;
-  aspect-ratio: 4 / 3;
-  border-radius: var(--radius-md);
+  aspect-ratio: 4 / 2.5;
+  border-radius: 14px;
   overflow: hidden;
-  background: var(--color-gray-medium);
+  background: #dfe9e4;
 }
 
 .image {
@@ -37,28 +39,29 @@
   object-fit: cover;
 }
 
+/* Thumbnails */
 .thumbnails {
   display: flex;
-  gap: var(--spacing-sm);
+  gap: 0.75rem;
 }
 
 .thumbnail {
   flex: 1;
-  aspect-ratio: 5 / 6;
-  border-radius: var(--radius-sm);
+  aspect-ratio: 1 / 1;
+  border-radius: 10px;
   overflow: hidden;
-  border: 2px solid transparent;
-  transition: border-color var(--transition-fast);
+  border: 1px solid transparent;
+  background: #dfe9e4;
   cursor: pointer;
-  background: var(--color-gray-medium);
+  transition: border-color 0.2s ease;
 }
 
 .thumbnail:hover {
-  border-color: var(--color-gray-light);
+  border-color: #a6c8b6;
 }
 
 .thumbnail.thumbnailActive {
-  border-color: var(--color-gold);
+  border-color: #1f6f54;
 }
 
 .thumbnailImage {
@@ -67,165 +70,147 @@
   object-fit: cover;
 }
 
+/* Details */
 .detailSection {
   display: flex;
   flex-direction: column;
-  /* gap: var(--spacing-md); */
+  gap: 1.2rem;
+  padding-top: 0.5rem;
 }
 
 .name {
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 700;
-  color: var(--green-dark);
-  letter-spacing: -1px;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 600;
+  color: #0f3d2e;
+  letter-spacing: -0.5px;
 }
 
 .price {
-  font-size: clamp(1.5rem, 3vw, 2rem);
-  font-weight: 700;
-  color: var(--color-gold);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #1f6f54;
 }
 
 .description {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: var(--color-gray-light);
-  margin-bottom: var(--spacing-sm);
-}
-
-.label {
-  display: block;
   font-size: 1rem;
-  font-weight: 600;
-  color: var(--color-off-white);
-  margin-bottom: var(--spacing-sm);
-  letter-spacing: 0.5px;
+  line-height: 1.7;
+  color: #4e6b5f;
+  max-width: 420px;
 }
 
+/* Labels */
+.label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #0f3d2e;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.4rem;
+}
+
+/* Size */
 .sizeSelector {
-  margin-top: var(--spacing-sm);
+  margin-top: 0.5rem;
 }
 
 .sizeOptions {
   display: flex;
-  gap: var(--spacing-sm);
+  gap: 0.5rem;
   flex-wrap: wrap;
 }
 
 .sizeButton {
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--color-off-white);
-  background: var(--color-gray-medium);
-  border: 2px solid transparent;
-  border-radius: var(--radius-sm);
+  padding: 0.5rem 1.2rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #0f3d2e;
+  background: transparent;
+  border: 1px solid #a6c8b6;
+  border-radius: 999px;
   cursor: pointer;
-  transition: all var(--transition-fast);
+  transition: all 0.2s ease;
 }
 
 .sizeButton:hover {
-  border-color: var(--color-gray-light);
+  background: #d4e7dd;
 }
 
 .sizeButton.sizeButtonActive {
-  background: var(--color-gold);
-  color: var(--color-black);
-  border-color: var(--color-gold);
+  background: #0f3d2e;
+  color: #ffffff;
+  border-color: #0f3d2e;
 }
 
+/* Quantity */
 .quantitySelector {
-  margin-top: var(--spacing-sm);
+  margin-top: 0.5rem;
 }
 
 .quantityControls {
   display: flex;
   align-items: center;
-  gap: var(--spacing-md);
+  gap: 0.75rem;
 }
 
 .quantityButton {
-  width: 40px;
-  height: 40px;
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: var(--color-off-white);
-  background: var(--color-gray-medium);
-  border: none;
-  border-radius: var(--radius-sm);
+  width: 36px;
+  height: 36px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #0f3d2e;
+  background: #d4e7dd;
+  border-radius: 50%;
   cursor: pointer;
-  transition: all var(--transition-fast);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  transition: background 0.2s ease;
 }
 
 .quantityButton:hover {
-  background: var(--color-gray-light);
+  background: #c1d9cf;
 }
 
 .quantityValue {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: var(--color-off-white);
-  min-width: 40px;
+  font-size: 1rem;
+  font-weight: 500;
+  min-width: 24px;
   text-align: center;
+  color: #0f3d2e;
 }
 
+/* CTA */
 .addToCartButton {
-  margin-top: var(--spacing-md);
-  padding: 1rem 3rem;
-  font-size: 1.1rem;
+  margin-top: 1.5rem;
+  padding: 0.9rem 2.8rem;
+  font-size: 0.95rem;
   font-weight: 600;
   letter-spacing: 1px;
-  color: white;
+  text-transform: uppercase;
+  color: #ffffff;
   background: #0f3d2e;
-  border: 2px solid ;
   border-radius: 999px;
   cursor: pointer;
-  transition: all var(--transition-base);
-  position: relative;
-  overflow: hidden;
-}
-
-.addToCartButton::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  border-radius: 50%;
-  background: rgba(138, 125, 125, 0.3);
-  transform: translate(-50%, -50%);
-  transition: width 0.6s, height 0.6s;
-}
-
-.addToCartButton:hover::before {
-  width: 400px;
-  height: 400px;
+  transition: transform 0.2s ease, background 0.2s ease;
 }
 
 .addToCartButton:hover {
-  transform: translateY(-2px);
   background: #1f6f54;
-  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.4);
+  transform: translateY(-1px);
 }
 
+/* Responsive */
 @media (max-width: 1024px) {
   .grid {
     grid-template-columns: 1fr;
-    gap: var(--spacing-lg);
-  }
-
-  .detailSection {
-    order: 2;
+    gap: 3rem;
   }
 }
 
 @media (max-width: 768px) {
   .section {
-    padding-top: 100px;
+    padding-top: 90px;
+  }
+
+  .description {
+    max-width: 100%;
   }
 
   .thumbnails {
@@ -233,6 +218,6 @@
   }
 
   .thumbnail {
-    min-width: 80px;
+    min-width: 70px;
   }
 }
