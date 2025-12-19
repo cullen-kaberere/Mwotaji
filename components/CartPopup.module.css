@@ -2,55 +2,97 @@
   position: fixed;
   bottom: 20px;
   right: 20px;
-  z-index: var(--z-popup);
+  z-index: 9999;
   opacity: 0;
   transform: translateY(100px);
-  transition: all var(--transition-base);
+  transition: all 0.3s ease;
   pointer-events: none;
+  cursor: pointer;
 }
 
-.popup.popupVisible {
+.popupVisible {
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
 }
 
+.popup.collapsed {
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
 .popupContent {
   display: flex;
   align-items: center;
-  gap: var(--spacing-sm);
-  padding: var(--spacing-md) var(--spacing-lg);
-  background: var(--color-gray-dark);
-  border: 1px solid var(--color-gold);
-  border-radius: var(--radius-md);
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  gap: 12px;
+  padding: 12px 20px;
+  background: #0f3d2e; /* dark green */
+  border: 1px solid #6ee7b7; /* light green border */
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+  transition: all 0.3s ease;
 }
 
-.checkIcon {
-  color: var(--color-gold);
+.popup.collapsed .popupContent {
+  justify-content: center;
+  padding: 0;
+  background: #0f3d2e;
+  border-radius: 50%;
+}
+
+.cartIcon {
+  font-size: 1.5rem;
+  color: #6ee7b7; /* light green */
   flex-shrink: 0;
 }
 
+.popupText {
+  display: flex;
+  flex-direction: column;
+}
+
 .popupTitle {
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 600;
-  color: var(--color-off-white);
-  margin-bottom: 2px;
+  color: #ffffff;
+  margin: 0;
 }
 
 .popupProduct {
-  font-size: 0.9rem;
-  color: var(--color-gray-light);
+  font-size: 0.85rem;
+  color: #a5f3c9;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 150px;
 }
 
+/* Mobile adjustments */
 @media (max-width: 768px) {
   .popup {
-    right: 10px;
-    bottom: 10px;
-    left: 10px;
+    bottom: 12px;
+    right: 12px;
+    left: auto;
   }
 
   .popupContent {
-    width: 100%;
+    padding: 10px 16px;
+  }
+
+  .popup.collapsed {
+    width: 45px;
+    height: 45px;
+  }
+
+  .cartIcon {
+    font-size: 1.3rem;
+  }
+
+  .popupText {
+    display: none;
   }
 }

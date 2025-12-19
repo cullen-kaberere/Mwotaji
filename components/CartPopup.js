@@ -1,26 +1,43 @@
 "use client"
 
+import { useEffect, useState } from "react"
+import { useRouter } from "next/navigation"
 import styles from "./CartPopup.module.css"
+import { FiShoppingCart } from "react-icons/fi"
 
 export default function CartPopup({ show, productName }) {
+  const [collapsed, setCollapsed] = useState(false)
+  const router = useRouter()
+
+  useEffect(() => {
+    if (show) {
+      setCollapsed(false)
+      const timer = setTimeout(() => {
+        setCollapsed(true)
+      }, 2500) // 2.5 seconds before collapsing
+      return () => clearTimeout(timer)
+    }
+  }, [show])
+
+  const handleClick = () => {
+    router.push("/cart")
+  }
+
   return (
-    <div className={`${styles.popup} ${show ? styles.popupVisible : ""}`}>
+    <div
+      className={`${styles.popup} ${show ? styles.popupVisible : ""} ${
+        collapsed ? styles.collapsed : ""
+      }`}
+      onClick={handleClick}
+    >
       <div className={styles.popupContent}>
-        <svg
-          className={styles.checkIcon}
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="3"
-        >
-          <path d="M20 6L9 17l-5-5" />
-        </svg>
-        <div>
-          <p className={styles.popupTitle}>Added to cart</p>
-          <p className={styles.popupProduct}>{productName}</p>
-        </div>
+        <FiShoppingCart className={styles.cartIcon} />
+        {!collapsed && (
+          <div className={styles.popupText}>
+            <p className={styles.popupTitle}>Added to cart</p>
+            <p className={styles.popupProduct}>{productName}</p>
+          </div>
+        )}
       </div>
     </div>
   )
