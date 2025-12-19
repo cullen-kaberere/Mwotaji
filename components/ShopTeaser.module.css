@@ -1,31 +1,107 @@
 .section {
-  padding: 6rem 1.5rem;
+  padding: 7rem 1.5rem;
+  background: linear-gradient(135deg, #0b1f17, #000);
+  color: #ffffff;
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
   text-align: center;
-  background: linear-gradient(135deg, #111, #1a1a1a);
-  color: #fff;
 }
 
-.section h1 {
-  font-size: 2.6rem;
+.title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  margin-bottom: 4rem;
+  line-height: 1.2;
 }
 
-.section h2 {
-  margin-top: 0.5rem;
-  font-weight: 400;
-  color: #A8C7FA;
+/* =====================
+   EXPERIENCE GRID
+===================== */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  margin-bottom: 4rem;
 }
 
-.section p {
-  margin-top: 1rem;
-  color: #bbb;
+.card {
+  text-align: center;
 }
+
+.image {
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 1.5rem;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+/* Placeholder gradients (replace with real images later) */
+.football {
+  background: radial-gradient(circle at top, #1f6f54, #013927);
+}
+
+.social {
+  background: radial-gradient(circle at top, #355f4b, #0b1f17);
+}
+
+.fitness {
+  background: radial-gradient(circle at top, #3f7f68, #013927);
+}
+
+.card h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #c7d7cf;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+/* =====================
+   CTA BUTTON
+===================== */
 
 .button {
   display: inline-block;
-  margin-top: 2rem;
-  padding: 0.9rem 2.5rem;
+  margin-top: 1rem;
+  padding: 0.9rem 2.8rem;
   background: #013927;
-  color: white;
+  color: #ffffff;
   font-weight: 600;
-  border-radius: 6px;
+  border-radius: 999px;
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(1, 57, 39, 0.6);
+}
+
+/* =====================
+   MOBILE
+===================== */
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+
+  .image {
+    width: 120px;
+    height: 120px;
+  }
 }
