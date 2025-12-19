@@ -32,7 +32,7 @@
   text-align: center;
 }
 
-.image {
+/* .image {
   width: 140px;
   height: 140px;
   margin: 0 auto 1.5rem;
@@ -43,7 +43,7 @@
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1);
 }
 
-/* Placeholder gradients (replace with real images later) */
+
 .football {
   background: radial-gradient(circle at top, #1f6f54, #013927);
 }
@@ -54,7 +54,7 @@
 
 .fitness {
   background: radial-gradient(circle at top, #3f7f68, #013927);
-}
+} */
 
 .card h3 {
   font-size: 1.3rem;
@@ -104,4 +104,18 @@
     width: 120px;
     height: 120px;
   }
+}
+
+.imageWrap {
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 1.5rem;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.image {
+  object-fit: cover;
 }

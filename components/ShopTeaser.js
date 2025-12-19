@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import styles from "./ShopTeaser.module.css"
 
 export default function ShopTeaser() {
@@ -10,18 +11,35 @@ export default function ShopTeaser() {
         </h1>
 
         <div className={styles.grid}>
-          {/* CARD 1 */}
+          {/* FOOTBALL */}
           <div className={styles.card}>
-            <div className={`${styles.image} ${styles.football}`} />
+            <div className={styles.imageWrap}>
+              <Image
+                src="/mwotaji-football-win.jpg"
+                alt="Mwotaji football events"
+                fill
+                sizes="140px"
+                className={styles.image}
+                priority
+              />
+            </div>
             <h3>Football Events</h3>
             <p>
               We host and participate in football tournaments across the country.
             </p>
           </div>
 
-          {/* CARD 2 */}
+          {/* SOCIAL */}
           <div className={styles.card}>
-            <div className={`${styles.image} ${styles.social}`} />
+            <div className={styles.imageWrap}>
+              <Image
+                src="/mwotaji14.jpg"
+                alt="Mwotaji social events"
+                fill
+                sizes="140px"
+                className={styles.image}
+              />
+            </div>
             <h3>Social Events</h3>
             <p>
               Our community-friendly competitions and pop-up events bring the
@@ -29,20 +47,27 @@ export default function ShopTeaser() {
             </p>
           </div>
 
-          {/* CARD 3 */}
+          {/* FITNESS */}
           <div className={styles.card}>
-            <div className={`${styles.image} ${styles.fitness}`} />
+            <div className={styles.imageWrap}>
+              <Image
+                src="/mwotaji5.jpg"
+                alt="Mwotaji fitness community"
+                fill
+                sizes="140px"
+                className={styles.image}
+              />
+            </div>
             <h3>Fitness Community</h3>
             <p>
               Low impact fitness? High impact fitness? We do it both. Moving,
-              becoming, and growing together as a tribe — towards our best
-              selves.
+              becoming, and growing together as a tribe.
             </p>
           </div>
         </div>
 
         <Link href="/shop" className={styles.button}>
-          Explore our Collection
+          Explore the Collection
         </Link>
       </div>
     </section>
