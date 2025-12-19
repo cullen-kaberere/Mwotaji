@@ -2,19 +2,26 @@
 
 import { useEffect, useState } from "react"
 import { useRouter } from "next/navigation"
+import { useCart } from "@/context/CartContext"
 import styles from "./CartPopup.module.css"
 import { FiShoppingCart } from "react-icons/fi"
 
 export default function CartPopup({ show, productName }) {
-  const [collapsed, setCollapsed] = useState(false)
+  const [isVisible, setIsVisible] = useState(false)
+  const [showText, setShowText] = useState(false)
+  const { getCartCount } = useCart()
+  const cartCount = getCartCount()
   const router = useRouter()
 
   useEffect(() => {
     if (show) {
-      setCollapsed(false)
+      setIsVisible(true)
+      setShowText(true)
+
       const timer = setTimeout(() => {
-        setCollapsed(true)
-      }, 2500) // 2.5 seconds before collapsing
+        setShowText(false)
+      }, 2500)
+
       return () => clearTimeout(timer)
     }
   }, [show])
@@ -23,16 +30,25 @@ export default function CartPopup({ show, productName }) {
     router.push("/cart")
   }
 
+  if (!isVisible) return null
+
   return (
     <div
-      className={`${styles.popup} ${show ? styles.popupVisible : ""} ${
-        collapsed ? styles.collapsed : ""
-      }`}
+      className={`${styles.popup} ${styles.popupVisible}`}
       onClick={handleClick}
     >
       <div className={styles.popupContent}>
-        <FiShoppingCart className={styles.cartIcon} />
-        {!collapsed && (
+        <div className={styles.cartIconWrapper}>
+          <FiShoppingCart className={styles.cartIcon} />
+
+          {cartCount > 0 && (
+            <span className={styles.cartBadge}>
+              {cartCount}
+            </span>
+          )}
+        </div>
+
+        {showText && (
           <div className={styles.popupText}>
             <p className={styles.popupTitle}>Added to cart</p>
             <p className={styles.popupProduct}>{productName}</p>
