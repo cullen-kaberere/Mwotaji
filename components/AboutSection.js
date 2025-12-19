@@ -4,7 +4,7 @@ export default function AboutSection() {
   return (
     <section className={styles.section}>
       <div className={styles.image}>
-        <img src="/mwotaji1.jpg" alt="Mwotaji Vision" />
+        <img src="/mwotaji11.jpg" alt="Mwotaji Vision" />
       </div>
 
       <div className={styles.text}>
