@@ -116,7 +116,7 @@
 .hamburger span {
   width: 25px;
   height: 2px;
-  background: var(--color-off-white);
+  background: white;
   transition: all var(--transition-base);
   border-radius: 2px;
 }
