@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
+import { FaInstagram, FaYoutube, FaTiktok } from "react-icons/fa"
 import styles from "./Hero.module.css"
 
 const phrases = [
@@ -40,6 +41,34 @@ export default function Hero() {
 
   return (
     <section className={styles.hero}>
+      {/* SOCIALS */}
+      <div className={styles.socials}>
+        <Link
+          href="https://www.instagram.com/mwotajiofficial"
+          target="_blank"
+          aria-label="Instagram"
+        >
+          <FaInstagram />
+        </Link>
+
+        <Link
+          href="https://www.youtube.com/@MwotajiTribeOfDreamers"
+          target="_blank"
+          aria-label="YouTube"
+        >
+          <FaYoutube />
+        </Link>
+
+        <Link
+          href="https://www.tiktok.com/@mwotajiofficial"
+          target="_blank"
+          aria-label="TikTok"
+        >
+          <FaTiktok />
+        </Link>
+      </div>
+
+      {/* HERO CONTENT */}
       <div className={styles.content}>
         <h1 className={styles.title}>
           {text}
