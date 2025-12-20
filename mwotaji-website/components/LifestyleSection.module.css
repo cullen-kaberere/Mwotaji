@@ -1,0 +1,31 @@
+.section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  padding: 6rem 8%;
+  background: black;
+  color: #fff;
+  align-items: center;
+}
+
+.image img {
+  width: 75%;
+  border-radius: 18px;
+}
+
+.text h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  color: #013927;
+}
+
+.text h3 {
+  color: #ccc;
+  font-weight: 400;
+}
+
+@media (max-width: 900px) {
+  .section {
+    grid-template-columns: 1fr;
+  }
+}
