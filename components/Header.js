@@ -27,7 +27,7 @@ export default function Header() {
         {/* LOGO */}
         <Link href="/" className={styles.logo}>
           <Image
-            src="/Mwotaji-logo-removebg-preview.png"
+            src="/Mwotaji-pr-logo.png"
             alt="Mwotaji Official"
             width={140}
             height={40}
