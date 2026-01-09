@@ -8,18 +8,16 @@ export default function AboutSection() {
       </div>
 
       <div className={styles.text}>
-        <h1>By Kenya For The World</h1>
+        <h1>BY KENYA. FOR THE WORLD.</h1>
 
         <h3>
-          Mwotaji is more than a sportswear line —
-          it’s a tribe, a lifestyle brand at the intersection of
-          sports, culture, and storytelling.
+          Mwotaji is a premium sportswear and lifestyle brand rooted in
+          movement, mindfulness, and cultural identity.
         </h3>
 
         <p>
-          We exist to inspire athletes, dreamers, and everyday
-          people to express themselves through fashion,
-          competition, and community.
+          We design for those who honor the process — athletes, creators,
+          and individuals committed to becoming their highest self.
         </p>
       </div>
     </section>

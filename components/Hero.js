@@ -6,10 +6,10 @@ import { FaInstagram, FaYoutube, FaTiktok } from "react-icons/fa"
 import styles from "./Hero.module.css"
 
 const phrases = [
-  "Wear Your Purpose",
-  "Built From Vision",
-  "Dream. Create. Become.",
-  "This Is Mwotaji."
+  "WEAR YOUR PURPOSE",
+  "KEEP MOVING. KEEP BECOMING.",
+  "BUILT FROM INTENTION.",
+  "THIS IS MWOTAJI."
 ]
 
 export default function Hero() {
@@ -76,11 +76,11 @@ export default function Hero() {
         </h1>
 
         <p className={styles.subtitle}>
-          Premium African Sportswear & Lifestyle Brand
+          Premium Sportswear. Built for movement, identity, and meaning.
         </p>
 
         <Link href="/shop" className={styles.cta}>
-          Shop the Collection
+          View the Collection
         </Link>
       </div>
     </section>

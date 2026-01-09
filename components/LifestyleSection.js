@@ -4,12 +4,14 @@ export default function LifestyleSection() {
   return (
     <section className={styles.section}>
       <div className={styles.text}>
-        <h1>SPORTSWEAR<br />LIFESTYLE</h1>
+        <h1>
+          SPORTSWEAR<br />
+          AS A WAY OF LIFE
+        </h1>
 
         <h3>
-          Mwotaji is the bridge between
-          African heritage and global
-          performance culture.
+          Mwotaji exists at the intersection of African heritage
+          and modern performance culture.
         </h3>
       </div>
 

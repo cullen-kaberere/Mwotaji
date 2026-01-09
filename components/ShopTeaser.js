@@ -7,7 +7,7 @@ export default function ShopTeaser() {
     <section className={styles.section}>
       <div className={styles.inner}>
         <h1 className={styles.title}>
-          Make new memories with our <br /> sports experiences
+          MOVEMENT BEYOND THE GARMENT
         </h1>
 
         <div className={styles.grid}>
@@ -25,7 +25,8 @@ export default function ShopTeaser() {
             </div>
             <h3>Football Events</h3>
             <p>
-              We host and participate in football tournaments across the country.
+              Organized matches and tournaments that bring community,
+              discipline, and shared purpose together.
             </p>
           </div>
 
@@ -40,10 +41,10 @@ export default function ShopTeaser() {
                 className={styles.image}
               />
             </div>
-            <h3>Social Events</h3>
+            <h3>Community Moments</h3>
             <p>
-              Our community-friendly competitions and pop-up events bring the
-              tribe together and foster new connections for holistic growth.
+              Pop-ups and social experiences designed to connect,
+              reflect, and grow — together.
             </p>
           </div>
 
@@ -58,16 +59,16 @@ export default function ShopTeaser() {
                 className={styles.image}
               />
             </div>
-            <h3>Fitness Community</h3>
+            <h3>Shared Movement</h3>
             <p>
-              Low impact fitness? High impact fitness? We do it both. Moving,
-              becoming, and growing together as a tribe.
+              From low-impact sessions to intense training,
+              we move with intention and consistency.
             </p>
           </div>
         </div>
 
         <Link href="/shop" className={styles.button}>
-          Explore the Collection
+          Enter the Collection
         </Link>
       </div>
     </section>
