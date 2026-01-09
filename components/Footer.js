@@ -12,10 +12,10 @@ export default function Footer() {
         {/* LOGO */}
         <div className={styles.logoWrap}>
           <Image
-            src="/Mwotaji-logo-removebg-preview.png"
+            src="/Mwotaji-priy-logo.png"
             alt="Mwotaji Official"
-            width={160}
-            height={46}
+            width={209}
+            height={60}
             priority
           />
         </div>
