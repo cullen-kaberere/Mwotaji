@@ -22,12 +22,11 @@ export default function Footer() {
 
         {/* MAIN MESSAGE */}
         <p className={styles.statement}>
-          We’re building the future of African sportswear, storytelling, and
-          community — <span>one dreamer at a time.</span>
+          We’re building sportswear rooted in movement, identity, and culture. <span>Shaped with intention.</span>
         </p>
 
         {/* TAGLINE */}
-        <p className={styles.tagline}>NEVER STOP DREAMING</p>
+        <p className={styles.tagline}>KEEP MOVING. KEEP BECOMING.</p>
 
         {/* SOCIALS */}
         <div className={styles.socials}>
