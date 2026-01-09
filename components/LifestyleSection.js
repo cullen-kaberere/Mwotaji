@@ -10,13 +10,12 @@ export default function LifestyleSection() {
         </h1>
 
         <h3>
-          Mwotaji exists at the intersection of African heritage
-          and modern performance culture.
+          Mwotaji exists at the intersection of heritage and modern performance.
         </h3>
       </div>
 
       <div className={styles.image}>
-        <img src="/mwotaji1.jpg" alt="Mwotaji Lifestyle" />
+        <img src="/mwotaji1-E.png" alt="Mwotaji Lifestyle" />
       </div>
     </section>
   )
