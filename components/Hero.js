@@ -6,10 +6,10 @@ import { FaInstagram, FaYoutube, FaTiktok } from "react-icons/fa"
 import styles from "./Hero.module.css"
 
 const phrases = [
-  "WEAR YOUR PURPOSE",
-  "KEEP MOVING. KEEP BECOMING.",
-  "BUILT FROM INTENTION.",
-  "THIS IS MWOTAJI."
+  "MWOTAJI",
+  "PERFORMANCE WEAR FOR THOSE IN MOTION",
+  "BUILT WITH DISCIPLINE",
+  "KEEP MOVING. KEEP BECOMING."
 ]
 
 export default function Hero() {
@@ -76,12 +76,18 @@ export default function Hero() {
         </h1>
 
         <p className={styles.subtitle}>
-          Premium Sportswear. Built for movement, identity, and meaning.
+          Performance sportswear built for movement, discipline, and purpose.
         </p>
 
-        <Link href="/shop" className={styles.cta}>
-          View the Collection
-        </Link>
+        <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap" }}>
+          <Link href="/shop" className={styles.cta}>
+            Shop the Collection
+          </Link>
+
+          <Link href="/community" className={styles.cta} style={{ background: "transparent", border: "1px solid #013927" }}>
+            Explore the Tribe
+          </Link>
+        </div>
       </div>
     </section>
   )

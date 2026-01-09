@@ -11,13 +11,12 @@ export default function AboutSection() {
         <h1>BY KENYA. FOR THE WORLD.</h1>
 
         <h3>
-          Mwotaji is a premium sportswear and lifestyle brand rooted in
-          movement, mindfulness, and cultural identity.
+          Mwotaji is built on the belief that discipline gives shape to dreams.
         </h3>
 
         <p>
-          We design for those who honor the process — athletes, creators,
-          and individuals committed to becoming their highest self.
+          We create sportswear and lifestyle pieces for people who train with
+          intention, live fully, and understand that progress is earned.
         </p>
       </div>
     </section>
