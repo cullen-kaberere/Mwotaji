@@ -1,11 +1,11 @@
 import Image from "next/image"
+import Link from "next/link"
 import styles from "./BrandStory.module.css"
 
 export default function BrandStory() {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-        {/* Background Decorative Text */}
         <div className={styles.heritageWatermark}>HERITAGE</div>
 
         <div className={styles.mainGrid}>
@@ -17,7 +17,7 @@ export default function BrandStory() {
               <p className={styles.lead}>Dreams mean nothing without action.</p>
               <p className={styles.body}>
                 We saw a gap, not just in sportswear quality, but in representation. 
-                We built something that reflects who we are, where we’re from, and where we’re going.
+                We built something that reflects who we are and where we’re going.
               </p>
             </div>
 
@@ -26,11 +26,20 @@ export default function BrandStory() {
               <div className={styles.badge}>Still learning</div>
               <div className={styles.badge}>Still showing up</div>
             </div>
+
+            {/* INTEGRATED CTA BUTTONS */}
+            <div className={styles.ctaGroup}>
+              <Link href="/shop" className={styles.primaryBtn}>
+                Shop Collection
+              </Link>
+              <Link href="/community" className={styles.secondaryBtn}>
+                Join the Tribe
+              </Link>
+            </div>
           </div>
 
           <div className={styles.imageSide}>
             <div className={styles.visualFrame}>
-              {/* This is your transparent image */}
               <Image 
                 src="/mwotaji-der.png" 
                 alt="Mwotaji legacy" 

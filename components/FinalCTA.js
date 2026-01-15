@@ -1,15 +1,21 @@
+import Link from "next/link";
 import styles from "./FinalCTA.module.css";
 
 export default function FinalCTA() {
   return (
     <section className={styles.cta}>
-      <div className={styles.glassInner}>
-        <h2>Join the Movement</h2>
-        <p>Whether you're training, creating, or chasing something personal—Mwotaji is built to move with you.</p>
-        <div className={styles.btnStack}>
-          <button className={styles.btnLight}>Shop Collection</button>
-          <button className={styles.btnDark}>Join the Tribe</button>
-        </div>
+      {/* Optional: Small decorative transparent image to ground the section */}
+      <div className={styles.visualPeeker}>
+        <img src="/mwotaji-logo-mark.png" alt="" className={styles.peekImg} />
+      </div>
+
+      <div className={styles.buttonWrapper}>
+        <Link href="/shop" className={styles.primaryBtn}>
+          Shop Collection
+        </Link>
+        <Link href="/community" className={styles.secondaryBtn}>
+          Join the Tribe
+        </Link>
       </div>
     </section>
   );

@@ -1,39 +1,87 @@
 .cta {
-  padding: 10px 2px 1px;
-  background: linear-gradient(to bottom, #05120e, #013927);
-  text-align: center;
-}
-
-.glassInner {
-  max-width: 800px;
-  margin: 0 auto 100px;
-  padding: 60px 20px;
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(10px);
-  border-radius: 30px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.btnStack {
+  padding: 4rem 1.5rem; /* Smallest possible footprint */
+  background: #05120e; /* Deepest forest green */
   display: flex;
-  gap: 15px;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  margin-top: 30px;
+  position: relative;
+  overflow: hidden;
 }
 
-.btnLight { background: #fff; color: #000; padding: 15px 35px; border-radius: 50px; font-weight: 700; border: none; }
-.btnDark { background: transparent; color: #fff; border: 1px solid #fff; padding: 15px 35px; border-radius: 50px; font-weight: 700; }
+/* Smart Decorative Element */
+.visualPeeker {
+  margin-bottom: 2rem;
+  opacity: 0.4;
+  transition: opacity 0.5s ease;
+}
 
-.microFooter {
-  border-top: 1px solid rgba(255,255,255,0.1);
-  padding-top: 40px;
+.peekImg {
+  height: 40px; /* Very small brand mark or icon */
+  width: auto;
+  filter: grayscale(100%) brightness(2);
+}
+
+.cta:hover .visualPeeker {
+  opacity: 1;
+}
+
+/* The Button Stack */
+.buttonWrapper {
   display: flex;
-  justify-content: space-between;
-  font-size: 0.8rem;
-  opacity: 0.6;
+  gap: 1.2rem;
+  width: 100%;
+  max-width: 500px;
+  justify-content: center;
+  z-index: 2;
 }
 
-@media (max-width: 768px) {
-  .btnStack { flex-direction: column; }
-  .microFooter { flex-direction: column; gap: 20px; text-align: center; }
+.primaryBtn, .secondaryBtn {
+  flex: 1; /* Makes them equal width */
+  text-align: center;
+  padding: 1.1rem 1.5rem;
+  border-radius: 100px; /* Modern Pill shape */
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy effect */
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.primaryBtn {
+  background: #fff;
+  color: #000;
+  border: 2px solid #fff;
+}
+
+.secondaryBtn {
+  background: transparent;
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Modern Hover States */
+.primaryBtn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+}
+
+.secondaryBtn:hover {
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateY(-5px);
+}
+
+/* Mobile: Stack them neatly but keep them small */
+@media (max-width: 600px) {
+  .buttonWrapper {
+    flex-direction: column;
+    max-width: 280px;
+  }
+  
+  .cta {
+    padding: 3rem 1.5rem;
+  }
 }

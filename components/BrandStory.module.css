@@ -140,3 +140,63 @@
   .title { font-size: 3.5rem; }
   .imageBackdrop { top: 10%; right: 5%; width: 90%; }
 }
+
+.ctaGroup {
+  display: flex;
+  gap: 1rem;
+  margin-top: 3.5rem;
+  position: relative;
+  z-index: 5;
+}
+
+.primaryBtn, .secondaryBtn {
+  padding: 1.1rem 2rem;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: center;
+  cursor: pointer;
+}
+
+.primaryBtn {
+  background: #fff;
+  color: #000;
+  border: 2px solid #fff;
+}
+
+.secondaryBtn {
+  background: transparent;
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Hover Effects */
+.primaryBtn:hover {
+  background: #0f6b4a;
+  border-color: #0f6b4a;
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(15, 107, 74, 0.2);
+}
+
+.secondaryBtn:hover {
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateY(-3px);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .ctaGroup {
+    flex-direction: column;
+    margin-top: 2.5rem;
+  }
+  
+  .primaryBtn, .secondaryBtn {
+    width: 100%;
+    padding: 1rem;
+  }
+}

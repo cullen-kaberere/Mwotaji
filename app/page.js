@@ -5,7 +5,7 @@ import LifestyleSection from "@/components/LifestyleSection"
 import ShopTeaser from "@/components/ShopTeaser"
 import BrandStory from "@/components/BrandStory"
 import ValueProp from "@/components/ValueProp"
-import FinalCTA from "@/components/FinalCTA"
+// import FinalCTA from "@/components/FinalCTA"
 
 export default function HomePage() {
   return (
@@ -18,7 +18,7 @@ export default function HomePage() {
         <ValueProp />
         <ShopTeaser />
         <BrandStory />
-        <FinalCTA />
+        {/* <FinalCTA /> */}
       </main>
     </>
   )
