@@ -1,32 +1,135 @@
 .section {
-  padding: 6rem 1.5rem;
+  padding: 8rem 1.5rem;
   background: #000;
+  color: #fff;
+  overflow: hidden;
+  position: relative;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+/* Visual Anchor with Watermark */
+.visualAnchor {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.verticalWatermark {
+  position: absolute;
+  left: -20px;
+  font-size: 10rem;
+  font-weight: 900;
+  color: rgba(15, 107, 74, 0.1); /* Subtle Mwotaji Green */
+  line-height: 1;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.heroImg {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 450px;
+  filter: drop-shadow(0 20px 50px rgba(0, 0, 0, 0.5));
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.visualAnchor:hover .heroImg {
+  transform: scale(1.05) translateY(-10px);
+}
+
+/* Content side styling */
+.label {
+  color: #0f6b4a;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 4px;
+  font-size: 0.75rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.mainTitle {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1;
+  margin-bottom: 3rem;
+  font-weight: 900;
+}
+
+.cardStack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Glassmorphism Cards */
+.glassCard {
+  display: flex;
+  gap: 2rem;
+  padding: 2.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  backdrop-filter: blur(10px);
+  transition: all 0.4s ease;
+}
+
+.glassCard:hover {
+  background: rgba(15, 107, 74, 0.08);
+  border-color: #0f6b4a;
+  transform: translateX(10px);
+}
+
+.cardNumber {
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: #0f6b4a;
+  font-family: serif;
+}
+
+.cardInfo h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
   color: #fff;
 }
 
-.container { max-width: 1200px; margin: 0 auto; }
-.label { color: #0f6b4a; text-transform: uppercase; font-weight: 800; letter-spacing: 3px; font-size: 0.7rem; }
-
-.grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-  margin-top: 3rem;
+.cardInfo p {
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.6;
+  font-size: 1rem;
 }
 
-.card {
-  padding: 3rem;
-  background: #111;
-  border-radius: 30px;
-  border: 1px solid #222;
-  transition: 0.4s ease;
+/* Desktop Logic */
+@media (min-width: 1024px) {
+  .container {
+    grid-template-columns: 1fr 1.2fr;
+  }
+  
+  .verticalWatermark {
+    font-size: 15rem;
+    left: -50px;
+  }
 }
 
-.card:hover { border-color: #013927; transform: translateY(-5px); }
-
-.card h3 { font-size: 1.8rem; margin-bottom: 1rem; color: #fff; }
-.card p { color: #888; line-height: 1.7; font-size: 1.1rem; }
-
-@media (min-width: 900px) {
-  .grid { grid-template-columns: 1fr 1fr; }
+/* Small Screen Adjustments */
+@media (max-width: 768px) {
+  .glassCard {
+    padding: 1.5rem;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .verticalWatermark {
+    font-size: 8rem;
+    top: -20px;
+  }
 }
