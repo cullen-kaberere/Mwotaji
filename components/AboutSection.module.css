@@ -2,14 +2,14 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
-  padding: 2rem 8%;
+  padding: 3rem 0% 0rem 8%;
   background: #A8C7FA;
   align-items: center;
 }
 
 .image img {
   width: 75%;
-  border-radius: 18px;
+  border-radius: 0px;
 }
 
 .text h1 {

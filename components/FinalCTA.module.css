@@ -1,0 +1,46 @@
+.section {
+  padding: 7rem 1.5rem;
+  background: linear-gradient(135deg, #013927, #000);
+  color: #ffffff;
+}
+
+.inner {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.title {
+  font-size: clamp(2.2rem, 4vw, 3rem);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+  color: #e6efe9;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
+
+.primary {
+  padding: 0.9rem 2.8rem;
+  background: #ffffff;
+  color: #013927;
+  font-weight: 600;
+  border-radius: 999px;
+}
+
+.secondary {
+  padding: 0.9rem 2.8rem;
+  border: 1px solid #ffffff;
+  border-radius: 999px;
+  font-weight: 600;
+}
