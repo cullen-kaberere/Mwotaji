@@ -49,7 +49,7 @@ export default function Hero() {
           <Link href="/shop" className={styles.ctaPrimary}>
             Shop Collection
           </Link>
-          <Link href="/community" className={styles.ctaSecondary}>
+          <Link href="/#the-tribe" className={styles.ctaSecondary}>
             The Tribe
           </Link>
         </div>

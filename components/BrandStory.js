@@ -32,7 +32,7 @@ export default function BrandStory() {
               <Link href="/shop" className={styles.primaryBtn}>
                 Shop Collection
               </Link>
-              <Link href="/community" className={styles.secondaryBtn}>
+              <Link href="/#the-tribe" className={styles.secondaryBtn}>
                 Join the Tribe
               </Link>
             </div>

@@ -8,10 +8,13 @@ export default function ShopTeaser() {
   ];
 
   return (
-    <section className={styles.wrapper}>
+    <section id="the-tribe" className={styles.wrapper}>
       <div className={styles.top}>
-        <span className={styles.eyebrow}>The Culture</span>
-        <h2 className={styles.title}>MOVEMENT BEYOND THE GARMENT</h2>
+        <span className={styles.eyebrow}>The Tribe</span>
+        <h2 className={styles.title}>MOVEMENT BEYOND <br/> THE GARMENT</h2>
+        <p className={styles.subtitle}>
+          Mwotaji is worn by athletes, creatives, and everyday people who take their growth seriously.
+        </p>
       </div>
 
       <div className={styles.grid}>
@@ -19,10 +22,12 @@ export default function ShopTeaser() {
           <div key={i} className={styles.card}>
             <div className={styles.imgBox}>
               <img src={cat.img} alt={cat.name} />
-            </div>
-            <div className={styles.info}>
-              <h3>{cat.name}</h3>
-              <p>{cat.desc}</p>
+              <div className={styles.overlay}>
+                <div className={styles.info}>
+                  <h3>{cat.name}</h3>
+                  <p>{cat.desc}</p>
+                </div>
+              </div>
             </div>
           </div>
         ))}
