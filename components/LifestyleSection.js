@@ -14,7 +14,7 @@ export default function LifestyleSection() {
             so it holds up in training, movement, and everyday life.
           </p>
           <div className={styles.actionWrap}>
-            <a href="/shop?sportswear" className={styles.btn}>Explore Collection</a>
+            <a href="/shop" className={styles.btn}>Explore Collection</a>
           </div>
         </div>
         <div className={styles.visualSide}>

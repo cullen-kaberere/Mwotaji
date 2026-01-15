@@ -29,7 +29,7 @@ export default function ShopTeaser() {
       </div>
 
       <div className={styles.action}>
-        <button className={styles.mainBtn}>Explore the Collection</button>
+        <a href="/shop" className={styles.mainBtn}>Explore the Collection</a>
       </div>
     </section>
   );
