@@ -1,34 +1,36 @@
-import Link from "next/link"
-import Image from "next/image"
-import styles from "./ShopTeaser.module.css"
+import styles from "./ShopTeaser.module.css";
 
 export default function ShopTeaser() {
+  const categories = [
+    { name: "Football Events", desc: "Community matches & runs", img: "/mwotaji-football-win.jpg" },
+    { name: "Community", desc: "Real people, real growth", img: "/mwotaji14.jpg" },
+    { name: "Movement", desc: "Training with intention", img: "/mwotaji5.jpg" }
+  ];
+
   return (
-    <section className={styles.section}>
-      <div className={styles.topInfo}>
-         <span className={styles.label}>The Tribe</span>
-         <h2 className={styles.mainTitle}>MOVEMENT BEYOND <br/> THE GARMENT</h2>
+    <section className={styles.wrapper}>
+      <div className={styles.top}>
+        <span className={styles.eyebrow}>The Culture</span>
+        <h2 className={styles.title}>MOVEMENT BEYOND THE GARMENT</h2>
       </div>
 
       <div className={styles.grid}>
-        {[
-          { t: "Football Events", d: "Matches & community tournaments.", i: "/mwotaji-football-win.jpg" },
-          { t: "Community", d: "Social experiences & growth.", i: "/mwotaji14.jpg" },
-          { t: "Shared Movement", d: "Training with intention.", i: "/mwotaji5.jpg" }
-        ].map((item, idx) => (
-          <div key={idx} className={styles.item}>
-            <div className={styles.imgWrap}>
-              <Image src={item.i} alt={item.t} fill className={styles.actualImg} />
+        {categories.map((cat, i) => (
+          <div key={i} className={styles.card}>
+            <div className={styles.imgBox}>
+              <img src={cat.img} alt={cat.name} />
             </div>
-            <div className={styles.meta}>
-              <h3>{item.t}</h3>
-              <p>{item.d}</p>
+            <div className={styles.info}>
+              <h3>{cat.name}</h3>
+              <p>{cat.desc}</p>
             </div>
           </div>
         ))}
       </div>
 
-      <Link href="/shop" className={styles.collectionBtn}>Explore Collection</Link>
+      <div className={styles.action}>
+        <button className={styles.mainBtn}>Explore the Collection</button>
+      </div>
     </section>
-  )
+  );
 }
