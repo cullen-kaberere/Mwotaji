@@ -2,37 +2,33 @@ import Link from "next/link"
 import Image from "next/image"
 import styles from "./ShopTeaser.module.css"
 
-const EXPERIENCES = [
-  { title: "Football Events", img: "/mwotaji-football-win.jpg", desc: "Organized matches and tournaments." },
-  { title: "Community", img: "/mwotaji14.jpg", desc: "Pop-ups and social experiences." },
-  { title: "Movement", img: "/mwotaji5.jpg", desc: "Intense training and consistency." }
-]
-
 export default function ShopTeaser() {
   return (
     <section className={styles.section}>
-      <h2 className={styles.tagline}>The Culture</h2>
-      <h1 className={styles.title}>MOVEMENT BEYOND<br/>THE GARMENT</h1>
-      
-      <div className={styles.carouselContainer}>
-        <div className={styles.track}>
-          {EXPERIENCES.map((item, idx) => (
-            <div key={idx} className={styles.card}>
-              <div className={styles.imageWrap}>
-                <Image src={item.img} alt={item.title} fill className={styles.image} />
-              </div>
-              <div className={styles.cardContent}>
-                <h3>{item.title}</h3>
-                <p>{item.desc}</p>
-              </div>
-            </div>
-          ))}
-        </div>
+      <div className={styles.topInfo}>
+         <span className={styles.label}>The Tribe</span>
+         <h2 className={styles.mainTitle}>MOVEMENT BEYOND <br/> THE GARMENT</h2>
       </div>
 
-      <Link href="/shop" className={styles.mainCta}>
-        Enter the Collection
-      </Link>
+      <div className={styles.grid}>
+        {[
+          { t: "Football Events", d: "Matches & community tournaments.", i: "/mwotaji-football-win.jpg" },
+          { t: "Community", d: "Social experiences & growth.", i: "/mwotaji14.jpg" },
+          { t: "Shared Movement", d: "Training with intention.", i: "/mwotaji5.jpg" }
+        ].map((item, idx) => (
+          <div key={idx} className={styles.item}>
+            <div className={styles.imgWrap}>
+              <Image src={item.i} alt={item.t} fill className={styles.actualImg} />
+            </div>
+            <div className={styles.meta}>
+              <h3>{item.t}</h3>
+              <p>{item.d}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <Link href="/shop" className={styles.collectionBtn}>Explore Collection</Link>
     </section>
   )
 }
