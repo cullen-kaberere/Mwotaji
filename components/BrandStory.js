@@ -4,24 +4,40 @@ import styles from "./BrandStory.module.css"
 export default function BrandStory() {
   return (
     <section className={styles.section}>
-      <div className={styles.grid}>
-        <div className={styles.imageColumn}>
-          <div className={styles.imageContainer}>
-            <Image src="/mwotaji5-e.png" alt="Mwotaji story" fill className={styles.image} />
+      <div className={styles.container}>
+        {/* Background Decorative Text */}
+        <div className={styles.heritageWatermark}>HERITAGE</div>
+
+        <div className={styles.mainGrid}>
+          <div className={styles.textSide}>
+            <span className={styles.eyebrow}>The Origin</span>
+            <h2 className={styles.title}>Our Story</h2>
+            
+            <div className={styles.description}>
+              <p className={styles.lead}>Dreams mean nothing without action.</p>
+              <p className={styles.body}>
+                We saw a gap, not just in sportswear quality, but in representation. 
+                We built something that reflects who we are, where we’re from, and where we’re going.
+              </p>
+            </div>
+
+            <div className={styles.manifestoStack}>
+              <div className={styles.badge}>Still building</div>
+              <div className={styles.badge}>Still learning</div>
+              <div className={styles.badge}>Still showing up</div>
+            </div>
           </div>
-        </div>
-        <div className={styles.textColumn}>
-          <h2 className={styles.title}>Our Story</h2>
-          <div className={styles.content}>
-            <p className={styles.lead}>Dreams mean nothing without action.</p>
-            <p className={styles.body}>
-              We saw a gap, not just in sportswear quality, but in representation. 
-              We built something that reflects who we are and where we’re going.
-            </p>
-            <div className={styles.manifesto}>
-              <span>Still building.</span>
-              <span>Still learning.</span>
-              <span>Still showing up.</span>
+
+          <div className={styles.imageSide}>
+            <div className={styles.visualFrame}>
+              {/* This is your transparent image */}
+              <Image 
+                src="/mwotaji-der.png" 
+                alt="Mwotaji legacy" 
+                fill 
+                className={styles.image} 
+              />
+              <div className={styles.imageBackdrop} />
             </div>
           </div>
         </div>
