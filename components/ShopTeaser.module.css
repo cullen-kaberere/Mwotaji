@@ -1,121 +1,81 @@
 .section {
-  padding: 7rem 1.5rem;
-  background: linear-gradient(135deg, #0b1f17, #000);
-  color: #ffffff;
+  padding: 5rem 0; /* Remove horizontal padding here to allow full-bleed scroll */
+  background: #000;
+  color: #fff;
+  text-align: center;
 }
 
-.inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  text-align: center;
+.tagline {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: #0f6b4a;
+  margin-bottom: 1rem;
 }
 
 .title {
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 700;
-  margin-bottom: 4rem;
-  line-height: 1.2;
+  font-size: clamp(2rem, 8vw, 3rem);
+  margin-bottom: 3rem;
+  padding: 0 1.5rem;
 }
 
-/* =====================
-   EXPERIENCE GRID
-===================== */
+/* HORIZONTAL SNAP LOGIC */
+.carouselContainer {
+  width: 100%;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none; /* Hide scrollbar Firefox */
+  padding: 0 1.5rem 3rem;
+}
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 3rem;
-  margin-bottom: 4rem;
+.carouselContainer::-webkit-scrollbar {
+  display: none; /* Hide scrollbar Chrome/Safari */
+}
+
+.track {
+  display: flex;
+  gap: 1rem;
+  width: max-content;
 }
 
 .card {
-  text-align: center;
-}
-
-/* .image {
-  width: 140px;
-  height: 140px;
-  margin: 0 auto 1.5rem;
-  border-radius: 50%;
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1);
-}
-
-
-.football {
-  background: radial-gradient(circle at top, #1f6f54, #013927);
-}
-
-.social {
-  background: radial-gradient(circle at top, #355f4b, #0b1f17);
-}
-
-.fitness {
-  background: radial-gradient(circle at top, #3f7f68, #013927);
-} */
-
-.card h3 {
-  font-size: 1.3rem;
-  font-weight: 600;
-  margin-bottom: 0.75rem;
-}
-
-.card p {
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: #c7d7cf;
-  max-width: 320px;
-  margin: 0 auto;
-}
-
-/* =====================
-   CTA BUTTON
-===================== */
-
-.button {
-  display: inline-block;
-  margin-top: 1rem;
-  padding: 0.9rem 2.8rem;
-  background: #013927;
-  color: #ffffff;
-  font-weight: 600;
-  border-radius: 999px;
-  transition: all 0.3s ease;
-}
-
-.button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(1, 57, 39, 0.6);
-}
-
-/* =====================
-   MOBILE
-===================== */
-
-@media (max-width: 900px) {
-  .grid {
-    grid-template-columns: 1fr;
-    gap: 3.5rem;
-  }
-
-  .image {
-    width: 120px;
-    height: 120px;
-  }
+  scroll-snap-align: center;
+  width: 85vw; /* Shows a peek of the next card */
+  max-width: 350px;
+  background: #0b1f17;
+  border-radius: 20px;
+  overflow: hidden;
+  text-align: left;
 }
 
 .imageWrap {
-  width: 140px;
-  height: 140px;
-  margin: 0 auto 1.5rem;
-  border-radius: 50%;
-  overflow: hidden;
+  width: 100%;
+  aspect-ratio: 1/1;
   position: relative;
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1);
 }
 
-.image {
-  object-fit: cover;
+.image { object-fit: cover; }
+
+.cardContent {
+  padding: 1.5rem;
+}
+
+.cardContent h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.cardContent p {
+  color: rgba(255,255,255,0.6);
+  font-size: 0.9rem;
+}
+
+.mainCta {
+  display: inline-block;
+  background: #013927;
+  color: #fff;
+  padding: 1rem 3rem;
+  border-radius: 50px;
+  font-weight: 700;
+  margin-top: 1rem;
 }

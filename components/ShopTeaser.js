@@ -2,75 +2,37 @@ import Link from "next/link"
 import Image from "next/image"
 import styles from "./ShopTeaser.module.css"
 
+const EXPERIENCES = [
+  { title: "Football Events", img: "/mwotaji-football-win.jpg", desc: "Organized matches and tournaments." },
+  { title: "Community", img: "/mwotaji14.jpg", desc: "Pop-ups and social experiences." },
+  { title: "Movement", img: "/mwotaji5.jpg", desc: "Intense training and consistency." }
+]
+
 export default function ShopTeaser() {
   return (
     <section className={styles.section}>
-      <div className={styles.inner}>
-        <h1 className={styles.title}>
-          MOVEMENT BEYOND THE GARMENT
-        </h1>
-
-        <div className={styles.grid}>
-          {/* FOOTBALL */}
-          <div className={styles.card}>
-            <div className={styles.imageWrap}>
-              <Image
-                src="/mwotaji-football-win.jpg"
-                alt="Mwotaji football events"
-                fill
-                sizes="140px"
-                className={styles.image}
-                priority
-              />
+      <h2 className={styles.tagline}>The Culture</h2>
+      <h1 className={styles.title}>MOVEMENT BEYOND<br/>THE GARMENT</h1>
+      
+      <div className={styles.carouselContainer}>
+        <div className={styles.track}>
+          {EXPERIENCES.map((item, idx) => (
+            <div key={idx} className={styles.card}>
+              <div className={styles.imageWrap}>
+                <Image src={item.img} alt={item.title} fill className={styles.image} />
+              </div>
+              <div className={styles.cardContent}>
+                <h3>{item.title}</h3>
+                <p>{item.desc}</p>
+              </div>
             </div>
-            <h3>Football Events</h3>
-            <p>
-              Organized matches and tournaments that bring community,
-              discipline, and shared purpose together.
-            </p>
-          </div>
-
-          {/* SOCIAL */}
-          <div className={styles.card}>
-            <div className={styles.imageWrap}>
-              <Image
-                src="/mwotaji14.jpg"
-                alt="Mwotaji social events"
-                fill
-                sizes="140px"
-                className={styles.image}
-              />
-            </div>
-            <h3>Community Moments</h3>
-            <p>
-              Pop-ups and social experiences designed to connect,
-              reflect, and grow — together.
-            </p>
-          </div>
-
-          {/* FITNESS */}
-          <div className={styles.card}>
-            <div className={styles.imageWrap}>
-              <Image
-                src="/mwotaji5.jpg"
-                alt="Mwotaji fitness community"
-                fill
-                sizes="140px"
-                className={styles.image}
-              />
-            </div>
-            <h3>Shared Movement</h3>
-            <p>
-              From low-impact sessions to intense training,
-              we move with intention and consistency.
-            </p>
-          </div>
+          ))}
         </div>
-
-        <Link href="/shop" className={styles.button}>
-          Enter the Collection
-        </Link>
       </div>
+
+      <Link href="/shop" className={styles.mainCta}>
+        Enter the Collection
+      </Link>
     </section>
   )
 }
