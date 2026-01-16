@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation"
 import { useEffect } from "react"
 import styles from "./CheckoutPage.module.css"
 
-const WHATSAPP_NUMBER = "254710314337"
+const WHATSAPP_NUMBER = "254703201556"
 
 export default function CheckoutPage() {
   const { cart, getCartTotal } = useCart()
