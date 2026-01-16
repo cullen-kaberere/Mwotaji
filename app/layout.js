@@ -12,8 +12,8 @@ export const metadata = {
   // Adding openGraph makes the link look premium when shared on WhatsApp/IG
   openGraph: {
     title: "Mwotaji Official",
-    description: "Not the kind that waits — the kind that moves.",
-    images: ["/Mwotaji-priy-logo.png"],
+    description: "Performance wear for dreamers in motion. Born in Kenya, inspired by community, sport, and the discipline of the African dreamer.",
+    images: ["/Mwotaji-favicon2.png"],
   },
 }
 
