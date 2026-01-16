@@ -22,7 +22,7 @@ export default function Footer() {
 
         {/* MAIN MESSAGE */}
         <p className={styles.statement}>
-          We’re building sportswear rooted in movement, identity, and culture. <span>Shaped with intention.</span>
+          Sportswear rooted in movement, identity, and the culture of the Dreamer. <span>Shaped by intention. Driven by action.</span>
         </p>
 
         {/* TAGLINE */}
