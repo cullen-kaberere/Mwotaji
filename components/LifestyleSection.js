@@ -23,5 +23,4 @@ export default function LifestyleSection() {
       </div>
     </section>
   )
-  
 }
