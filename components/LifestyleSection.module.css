@@ -1,7 +1,9 @@
 .lifestyle {
   background: #000;
-  padding: 5rem 1.5rem;
+  padding: 2rem 1.5rem 6rem 1.5rem; 
   color: #fff;
+  position: relative;
+  overflow: hidden;
 }
 
 .mainGrid {
@@ -9,13 +11,13 @@
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 4rem;
+  gap: 2rem;
 }
 
 .heading {
   font-size: clamp(2.2rem, 5vw, 3.5rem);
   line-height: 1;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .heading span { color: #013927; }
@@ -24,7 +26,7 @@
   font-size: 1.2rem;
   color: #888;
   max-width: 500px;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
 }
 
 .btn {
@@ -38,11 +40,84 @@
 
 .lifestyleImg {
   width: 100%;
+  max-height: 650px;
   border-radius: 20px;
   object-fit: cover;
 }
 
+/* --- TAPE STYLES --- */
+.tapeContainer {
+  position: absolute;
+  bottom: 0; 
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+}
+
+.stripeSolid {
+  background: #013927;
+  color: #fff;
+  padding: 10px 0;
+}
+
+.stripeOutline {
+  background: #000;
+  padding: 10px 0;
+  border-top: 1px solid #1a1a1a;
+}
+
+.track, .trackReverse {
+  display: flex;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+/* Desktop Speeds: Set longer for a premium, smooth glide */
+.track { animation: scrollLeft 65s linear infinite; }
+.trackReverse { animation: scrollRight 50s linear infinite; }
+
+.tapeWord, .tapeWordOutline {
+  font-size: 0.95rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  padding: 0 2rem; /* Increased padding for better spacing between phrases */
+  text-transform: uppercase;
+}
+
+.tapeWordOutline {
+  color: transparent;
+  -webkit-text-stroke: 1px #0f6b4a;
+}
+
+/* Seamless Loop Keyframes */
+@keyframes scrollLeft {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes scrollRight {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+
 @media (min-width: 900px) {
-  .mainGrid { grid-template-columns: 1fr 1.2fr; align-items: center; }
-  .lifestyle { padding: 10rem 2rem; }
+  .mainGrid { 
+    grid-template-columns: 1fr 1.2fr; 
+    align-items: center; 
+  }
+  .lifestyle { 
+    padding: 1rem 2rem 5.9rem 2rem; 
+  }
+}
+
+@media (max-width: 899px) {
+  .track {
+    animation-duration: 55s; /* Faster on mobile for energy */
+  }
+  
+  .trackReverse {
+    animation-duration: 50s;
+  }
 }
