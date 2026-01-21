@@ -1,14 +1,37 @@
 .hero {
   position: relative;
-  min-height: 90vh; /* Using svh for mobile address bar fixes */
+  min-height: 90vh;
   display: flex;
-  align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #013927, #000000);
-  padding: 0 1.5rem;
+  align-items: flex-start;
+  padding: 22vh 1.5rem 0;
   overflow: hidden;
 }
 
+/* VIDEO BACKGROUND */
+.videoBg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  filter: contrast(1.1) saturate(0.85);
+}
+
+/* OVERLAY */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0,0,0,0.55) 0%,
+    rgba(0,0,0,0.85) 70%
+  );
+  z-index: 1;
+}
+
+/* CONTENT */
 .content {
   position: relative;
   z-index: 2;
@@ -17,6 +40,7 @@
   max-width: 600px;
 }
 
+/* BADGE */
 .badge {
   text-transform: uppercase;
   font-size: 0.7rem;
@@ -26,23 +50,42 @@
   font-weight: 800;
 }
 
+/* TITLE */
 .title {
-  font-size: clamp(2.5rem, 10vw, 4.5rem);
+  font-size: clamp(2.2rem, 9vw, 4.5rem);
   font-weight: 800;
-  line-height: 1;
+  line-height: 0.95;
+  letter-spacing: -0.5px;
   color: #fff;
-  margin-bottom: 1.5rem;
 }
 
+.title span {
+  display: block;
+}
+
+/* SUBTITLE */
 .subtitle {
-  font-size: 1.1rem;
-  color: rgba(255, 255, 255, 0.7);
-  max-width: 400px;
-  margin: 0 auto 3rem;
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.75);
+  max-width: 420px;
+  margin: 1rem auto 0;
   line-height: 1.5;
 }
 
-/* SMART MOBILE BUTTONS */
+/* TYPEWRITER */
+.typewriter {
+  margin: 1.2rem 0 2.8rem;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+}
+
+.cursor {
+  margin-left: 2px;
+}
+
+/* BUTTONS */
 .buttonGroup {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -50,27 +93,39 @@
   width: 100%;
 }
 
-.ctaPrimary, .ctaSecondary {
+.ctaPrimary,
+.ctaSecondary {
   padding: 1.2rem 1rem;
   border-radius: 12px;
   font-weight: 700;
-  font-size: 0.9rem;
-  transition: transform 0.2s active;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
   text-align: center;
+  transition: transform 0.2s ease;
 }
 
 .ctaPrimary {
-  background: #fff;
-  color: #000;
+  background: #ffffff;
+  color: #000000;
+}
+
+.ctaPrimary:hover {
+  transform: translateY(-2px);
 }
 
 .ctaSecondary {
   background: rgba(255, 255, 255, 0.1);
-  color: #fff;
+  color: #ffffff;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
+.ctaSecondary:hover {
+  transform: translateY(-2px);
+}
+
+/* SOCIALS – DEFAULT (MOBILE FIRST) */
 .socials {
   position: absolute;
   bottom: 60px;
@@ -78,20 +133,48 @@
   gap: 2rem;
   font-size: 1.2rem;
   color: rgba(255,255,255,0.4);
+  z-index: 2;
 }
-/* .socials a:hover {
-  color: #ffffff;
-  transform: translateX(6px) scale(1.1);
-} */
 
+/* DESKTOP: SOCIALS ON RIGHT, VERTICAL */
 @media (min-width: 768px) {
+  .socials {
+    right: 40px;
+    bottom: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    flex-direction: column;
+    gap: 1.8rem;
+  }
+
   .buttonGroup {
     display: flex;
     justify-content: center;
     gap: 1.5rem;
   }
-  .ctaPrimary, .ctaSecondary {
+
+  .ctaPrimary,
+  .ctaSecondary {
     padding: 1rem 2.5rem;
     width: auto;
+  }
+}
+
+/* MOBILE VIDEO SAFETY */
+@media (max-width: 768px) {
+  .videoBg {
+    filter: brightness(0.75) contrast(1.05);
+  }
+}
+
+/* SMALL SCREENS – PUSH CONTENT LOWER */
+@media (max-width: 480px) {
+  .hero {
+    padding-top: 26vh;
+  }
+
+  .title {
+    font-size: 2.4rem;
+    line-height: 0.92;
   }
 }
