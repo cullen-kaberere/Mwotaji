@@ -14,9 +14,11 @@
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* IMPORTANT */
+  object-position: center center; /* default focus */
   z-index: 0;
   filter: contrast(1.1) saturate(0.85);
+  background: black;
 }
 
 /* OVERLAY */
@@ -174,13 +176,29 @@
   }
 
   .title {
-    font-size: 2.4rem;
+    font-size: 2.1rem;
     line-height: 0.92;
   }
   /* Even tighter vertical padding, same horizontal feel */
   .ctaPrimary,
   .ctaSecondary {
-    padding: 0.75rem 1.5rem;
+    padding: 0.7rem 0.5rem;
     font-size: 0.78rem;
   }
 }
+
+
+
+@media (max-width: 768px) {
+  .videoBg {
+    object-fit: cover; /* crop for cinematic feel */
+    object-position: center top; /* keep subject visible */
+    filter: brightness(0.75) contrast(1.05);
+  }
+}
+@media (max-width: 480px) {
+  .videoBg {
+    object-position: center 20%; /* push focus up */
+  }
+}
+

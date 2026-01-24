@@ -51,7 +51,7 @@ export default function Hero() {
         playsInline
         preload="metadata"
       >
-        <source src="/mwotaji-video.mp4" type="video/mp4" />
+        <source src="/mwotaji-video-bgv1.mp4" type="video/mp4" />
       </video>
 
       {/* Overlay */}
