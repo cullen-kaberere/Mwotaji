@@ -2,9 +2,24 @@ import styles from "./ShopTeaser.module.css";
 
 export default function ShopTeaser() {
   const categories = [
-    { name: "Football Events", desc: "Community matches & runs", img: "/mwotaji-football-win.jpg" },
-    { name: "Community", desc: "Real people, real growth", img: "/mwotaji14.jpg" },
-    { name: "Movement", desc: "Training with intention", img: "/mwotaji5.jpg" }
+    { 
+      name: "Football Events", 
+      desc: "Watch the latest battle", 
+      img: "/mwotaji-football-win.jpg",
+      link: "https://www.instagram.com/reel/C_AdhPPCNsM/" 
+    },
+    { 
+      name: "The Padel Series", 
+      desc: "Community & events", 
+      img: "/mwotaji14.jpg",
+      link: "https://www.instagram.com/reel/DPtjUhCjMZB/" 
+    },
+    { 
+      name: "Movement", 
+      desc: "Training with intention", 
+      img: "/mwotaji5.jpg",
+      link: "https://instagram.com/mwotajiofficial" 
+    }
   ];
 
   return (
@@ -19,7 +34,13 @@ export default function ShopTeaser() {
 
       <div className={styles.grid}>
         {categories.map((cat, i) => (
-          <div key={i} className={styles.card}>
+          <a 
+            key={i} 
+            href={cat.link} 
+            target={cat.link.startsWith('http') ? "_blank" : "_self"} 
+            rel="noopener noreferrer"
+            className={styles.card}
+          >
             <div className={styles.imgBox}>
               <img src={cat.img} alt={cat.name} />
               <div className={styles.overlay}>
@@ -29,7 +50,7 @@ export default function ShopTeaser() {
                 </div>
               </div>
             </div>
-          </div>
+          </a>
         ))}
       </div>
 
