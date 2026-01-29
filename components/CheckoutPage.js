@@ -18,17 +18,19 @@ export default function CheckoutPage() {
   }, [cart, router])
 
   const generateWhatsAppMessage = () => {
-    let message = "🛍️ *New Mwotaji Order*\n\n"
+    let message = "🛍️ *NEW MWOTAJI ORDER*\n"
+    message += "--------------------------\n\n"
 
     cart.forEach((item, index) => {
-      message += `${index + 1}. *${item.name}*\n`
+      message += `*${index + 1}. ${item.name.toUpperCase()}*\n`
       message += `   Size: ${item.size}\n`
       message += `   Qty: ${item.quantity}\n`
-      message += `   Subtotal: KES ${(item.price * item.quantity).toLocaleString()}\n\n`
+      message += `   Price: KES ${(item.price * item.quantity).toLocaleString()}\n\n`
     })
 
-    message += `*TOTAL: KES ${getCartTotal().toLocaleString()}*\n\n`
-    message += "Please confirm availability and delivery details."
+    message += "--------------------------\n"
+    message += `*ORDER TOTAL: KES ${getCartTotal().toLocaleString()}*\n\n`
+    message += "I'm ready to complete my order. Please confirm availability and delivery details! 🙏✨"
 
     return encodeURIComponent(message)
   }
@@ -43,23 +45,23 @@ export default function CheckoutPage() {
   return (
     <section className={styles.section}>
       <div className={styles.wrapper}>
-        <h1 className={styles.pageTitle}>Checkout</h1>
+        <span className={styles.eyebrow}>Final Step</span>
+        <h1 className={styles.pageTitle}>Secure Your Fit</h1>
 
         <div className={styles.card}>
-          {/* ORDER SUMMARY */}
           <div className={styles.summary}>
-            <h2 className={styles.sectionTitle}>Order Summary</h2>
+            <h2 className={styles.sectionTitle}>Order Review</h2>
 
             <div className={styles.items}>
               {cart.map((item) => (
                 <div key={`${item.id}-${item.size}`} className={styles.item}>
-                  <div>
-                    <p className={styles.itemName}>
-                      {item.name} <span>({item.size})</span>
-                    </p>
-                    <p className={styles.itemQty}>Qty {item.quantity}</p>
+                  <div className={styles.itemThumb}>
+                    <img src={item.image} alt={item.name} />
                   </div>
-
+                  <div className={styles.itemInfo}>
+                    <p className={styles.itemName}>{item.name}</p>
+                    <p className={styles.itemMeta}>Size: {item.size} • Qty {item.quantity}</p>
+                  </div>
                   <p className={styles.itemPrice}>
                     KES {(item.price * item.quantity).toLocaleString()}
                   </p>
@@ -70,27 +72,26 @@ export default function CheckoutPage() {
             <div className={styles.divider} />
 
             <div className={styles.totalRow}>
-              <span>Total</span>
-              <span>KES {getCartTotal().toLocaleString()}</span>
+              <span>Total Amount</span>
+              <span className={styles.totalAmount}>KES {getCartTotal().toLocaleString()}</span>
             </div>
           </div>
 
-          {/* WHATSAPP CHECKOUT */}
           <div className={styles.checkout}>
-            <h3 className={styles.checkoutTitle}>Complete Your Order</h3>
+            <h3 className={styles.checkoutTitle}>Direct Concierge Checkout</h3>
             <p className={styles.checkoutText}>
-              We confirm stock, delivery location, and payment directly via WhatsApp.
+              Your order will be sent to our team via WhatsApp to finalize your delivery and payment details instantly.
             </p>
 
             <button className={styles.whatsappBtn} onClick={handleCheckout}>
-              Complete Order on WhatsApp
+              Complete via WhatsApp
             </button>
 
             <button
               className={styles.backBtn}
               onClick={() => router.push("/cart")}
             >
-              ← Back to Cart
+              Modify Order
             </button>
           </div>
         </div>
