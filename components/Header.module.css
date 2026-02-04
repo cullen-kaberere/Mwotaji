@@ -162,7 +162,7 @@
     justify-content: center;
     gap: 2.5rem;
     transition: right var(--transition-base);
-    border-radius: 24px;
+    border-radius: 10px;
   }
 
   .nav.navOpen {
