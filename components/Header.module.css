@@ -156,7 +156,7 @@
     right: -100%;
     width: 40%;
     height: 30vh;
-    background: rgba(15, 61, 46, 0.98);
+    background: rgba(15, 61, 46, 0.75); /* dark green */
     backdrop-filter: blur(20px);
     flex-direction: column;
     justify-content: center;
