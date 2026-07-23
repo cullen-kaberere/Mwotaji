@@ -23,6 +23,7 @@ export default function ProductCard({ product }) {
           />
         )}
       </div>
+      
       <div className={styles.meta}>
         <h3 className={styles.name}>{product.name}</h3>
         <span className={styles.price}>KES {product.price.toLocaleString()}</span>
