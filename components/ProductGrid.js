@@ -33,6 +33,8 @@ export default function ProductGrid({ products }) {
           <p className={styles.subtitle}>Premium pieces for those who chase their dreams</p>
         </div>
 
+        
+
         <div className={styles.grid} ref={gridRef}>
           {products.map((product, index) => (
             <div key={product.id} className={styles.card} style={{ animationDelay: `${index * 0.1}s` }}>
