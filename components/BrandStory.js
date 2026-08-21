@@ -21,11 +21,11 @@ export default function BrandStory() {
               </p>
             </div>
 
-            <div className={styles.manifestoStack}>
+            {/* <div className={styles.manifestoStack}>
               <div className={styles.badge}>Still building</div>
               <div className={styles.badge}>Still learning</div>
               <div className={styles.badge}>Still showing up</div>
-            </div>
+            </div> */}
 
             {/* INTEGRATED CTA BUTTONS */}
             <div className={styles.ctaGroup}>

@@ -32,13 +32,13 @@ export default function AboutSection() {
           </p>
 
           {/* CLEAN EDITORIAL PILLARS (Replaces button-style pills) */}
-          <div className={styles.brandValues}>
+          {/* <div className={styles.brandValues}>
             <span className={styles.valueItem}>Belong</span>
             <span className={styles.dot}>•</span>
             <span className={styles.valueItem}>Perform</span>
             <span className={styles.dot}>•</span>
             <span className={styles.valueItem}>Celebrate Community</span>
-          </div>
+          </div> */}
         </div>
 
       </div>
