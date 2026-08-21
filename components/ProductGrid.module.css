@@ -1,50 +1,283 @@
+/* components/ProductGrid.module.css */
+
 .section {
+  background-color: #eaf2ef; /* Signature Light Ice Blue Background */
+  color: #0f3d2e;
+  padding: 120px 1.25rem 80px;
   min-height: 100vh;
-  padding: 120px 0 6rem;
-  background: #e8f3ee;
 }
 
-
 .container {
-  max-width: 1320px;
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 0 1.5rem;
 }
 
 .header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
 }
 
-.title {
-  font-size: clamp(2.5rem, 6vw, 4rem);
-  font-weight: 700;
-  letter-spacing: -1.5px;
+.tagPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(15, 61, 46, 0.05);
+  border: 1px solid rgba(15, 61, 46, 0.15);
+  padding: 6px 14px;
+  border-radius: 100px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
   color: #0f3d2e;
+  margin-bottom: 1.25rem;
 }
 
-.subtitle {
+.greenDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #2b8262;
+}
+
+.heading {
+  font-size: clamp(2rem, 4.5vw, 3.6rem);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  color: #0f3d2e;
+  text-transform: uppercase;
+}
+
+.headingMuted {
+  color: rgba(15, 61, 46, 0.45);
+}
+
+.subtext {
+  font-size: 1rem;
+  color: rgba(15, 61, 46, 0.75);
   max-width: 520px;
-  margin-top: 1rem;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: #6b4f3f;
+  margin-top: 0.85rem;
+  line-height: 1.5;
 }
 
+.offerCard {
+  margin-top: 1.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: #ffffff;
+  border: 1px solid rgba(15, 61, 46, 0.15);
+  padding: 8px 18px;
+  border-radius: 100px;
+  box-shadow: 0 4px 20px rgba(15, 61, 46, 0.04);
+}
+
+.offerBadge {
+  background: #0f3d2e;
+  color: #ffffff;
+  font-size: 0.65rem;
+  font-weight: 900;
+  padding: 3px 8px;
+  border-radius: 4px;
+  letter-spacing: 1px;
+}
+
+.offerText {
+  font-size: 0.82rem;
+  color: #0f3d2e;
+  font-weight: 600;
+}
+
+/* Category Filter Bar */
+.filterBar {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.filterBtn {
+  padding: 10px 20px;
+  border-radius: 8px;
+  background: rgba(15, 61, 46, 0.05);
+  border: 1px solid transparent;
+  color: #0f3d2e;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.activeFilter {
+  background: #0f3d2e;
+  color: #ffffff;
+}
+
+/* Product Cards Grid Layout */
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 3rem 2rem;
+  gap: 2rem;
 }
 
-@media (max-width: 1024px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.card {
+  display: flex;
+  flex-direction: column;
 }
 
+.cardLink {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  background: #f7faf8;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(15, 61, 46, 0.08);
+}
+
+/* Hover Image Swap Transitions */
+.primaryImg {
+  object-fit: cover;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.hoverImg {
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.card:hover .primaryImg {
+  opacity: 0;
+}
+
+.card:hover .hoverImg {
+  opacity: 1;
+  transform: scale(1.02);
+}
+
+.discountBadge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  color: #0f3d2e;
+  font-size: 0.62rem;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 100px;
+  border: 1px solid rgba(15, 61, 46, 0.12);
+}
+
+.cardDetails {
+  padding: 0.85rem 0.25rem 0.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.titleRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.productTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #0f3d2e;
+  line-height: 1.25;
+}
+
+.arrowIcon {
+  font-size: 0.9rem;
+  color: rgba(15, 61, 46, 0.4);
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.card:hover .arrowIcon {
+  transform: translateX(3px);
+  color: #0f3d2e;
+}
+
+.metaRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.priceContainer {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.mainPrice {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #0f3d2e;
+}
+
+.bulkOffer {
+  font-size: 0.72rem;
+  color: #2b8262;
+  font-weight: 600;
+}
+
+.swatchRow {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.colorDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1px solid rgba(15, 61, 46, 0.2);
+}
+
+/* Single-Column Editorial View for Mobile */
 @media (max-width: 640px) {
+  .section {
+    padding: 90px 1rem 40px;
+  }
+
   .grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Full width cards */
+    gap: 2.25rem;
+  }
+
+  .imageWrapper {
+    aspect-ratio: 4 / 5;
+    border-radius: 12px;
+  }
+
+  .productTitle {
+    font-size: 1.1rem;
+  }
+
+  .mainPrice {
+    font-size: 1.05rem;
+  }
+
+  .arrowIcon {
+    font-size: 1.1rem;
   }
 }
