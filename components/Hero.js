@@ -1,8 +1,9 @@
+// components/Hero.js
 "use client"
 
 import { useState, useEffect, useRef } from "react"
 import Link from "next/link"
-import { FaInstagram, FaYoutube, FaTiktok, FaVolumeMute, FaVolumeUp } from "react-icons/fa"
+import { FaInstagram, FaYoutube, FaTiktok } from "react-icons/fa"
 import styles from "./Hero.module.css"
 
 const phrases = [
@@ -16,10 +17,7 @@ export default function Hero() {
   const [text, setText] = useState("")
   const [index, setIndex] = useState(0)
   const [deleting, setDeleting] = useState(false)
-  const [isMuted, setIsMuted] = useState(true)
-  
-  const desktopVideoRef = useRef(null)
-  const mobileVideoRef = useRef(null)
+  const videoRef = useRef(null)
 
   useEffect(() => {
     const current = phrases[index]
@@ -43,22 +41,14 @@ export default function Hero() {
     return () => clearTimeout(timer)
   }, [text, deleting, index])
 
-  const toggleAudio = () => {
-    const nextMuteState = !isMuted
-    setIsMuted(nextMuteState)
-
-    if (desktopVideoRef.current) desktopVideoRef.current.muted = nextMuteState
-    if (mobileVideoRef.current) mobileVideoRef.current.muted = nextMuteState
-  }
-
   return (
     <section className={styles.heroSection}>
       
-      {/* MOBILE-ONLY FULL-SCREEN VIDEO BACKGROUND */}
-      <div className={styles.mobileVideoBgWrapper}>
+      {/* UNIVERSAL FULL-SCREEN VIDEO BACKGROUND */}
+      <div className={styles.videoBgWrapper}>
         <video
-          ref={mobileVideoRef}
-          className={styles.mobileVideoBg}
+          ref={videoRef}
+          className={styles.videoBg}
           autoPlay
           muted
           loop
@@ -67,12 +57,15 @@ export default function Hero() {
         >
           <source src="/mwotaji-campaign-916.mp4" type="video/mp4" />
         </video>
-        <div className={styles.mobileOverlay} />
+        
+        {/* Gradients for readability and cinematic vignette */}
+        <div className={styles.videoOverlay} />
+        <div className={styles.vignetteOverlay} />
       </div>
 
       <div className={styles.container}>
         
-        {/* LEFT / CENTER CONTENT */}
+        {/* HERO TEXT & CALL TO ACTIONS */}
         <div className={styles.textContent}>
           <div className={styles.campaignBadge}>
             <span className={styles.badgePulse}></span>
@@ -106,55 +99,9 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* DESKTOP-ONLY 9:16 VIDEO CARD SHOWCASE */}
-        <div className={styles.mediaContent}>
-          <div className={styles.videoCardWrapper}>
-            
-            {/* Dynamic Ambient Background Glow */}
-            <video
-              className={styles.ambientVideo}
-              autoPlay
-              muted
-              loop
-              playsInline
-              aria-hidden="true"
-            >
-              <source src="/mwotaji-campaign-916.mp4" type="video/mp4" />
-            </video>
-
-            {/* Main Interactive 9:16 Card */}
-            <div className={styles.videoCard}>
-              <video
-                ref={desktopVideoRef}
-                className={styles.mainVideo}
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="metadata"
-              >
-                <source src="/mwotaji-campaign-916.mp4" type="video/mp4" />
-              </video>
-
-              <div className={styles.frameTag}>SS/26 RELEASE</div>
-            </div>
-
-          </div>
-        </div>
-
       </div>
 
-      {/* FLOATING SOUND CONTROL TOGGLE (APPLIES TO BOTH MOBILE & DESKTOP) */}
-      {/* <button 
-        onClick={toggleAudio} 
-        className={styles.soundToggle}
-        aria-label="Toggle Sound"
-      >
-        {isMuted ? <FaVolumeMute /> : <FaVolumeUp />}
-        <span>{isMuted ? "SOUND ON" : "MUTED"}</span>
-      </button> */}
-
-      {/* SOCIALS */}
+      {/* SOCIAL LINKS */}
       <div className={styles.socials}>
         <Link href="https://instagram.com/mwotajiofficial" target="_blank" aria-label="Instagram">
           <FaInstagram />
