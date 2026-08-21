@@ -1,6 +1,6 @@
 .section {
   padding: 2rem 1.5rem;
-  background: #0a0a0a; /* Deeper black for more contrast */
+  background: #0a0a0a;
   color: #fff;
   position: relative;
   overflow: hidden;
@@ -63,7 +63,7 @@
   max-width: 500px;
 }
 
-/* manifesto Badges */
+/* Manifesto Badges */
 .manifestoStack {
   display: flex;
   flex-wrap: wrap;
@@ -103,7 +103,7 @@
 }
 
 .image {
-  object-fit: contain; /* Essential for transparent background images */
+  object-fit: contain;
   z-index: 2;
   filter: drop-shadow(0 20px 40px rgba(0,0,0,0.5));
 }
@@ -135,42 +135,46 @@
   }
 }
 
-/* Mobile Tweaks */
-@media (max-width: 768px) {
-  .title { font-size: 3.5rem; }
-  .imageBackdrop { top: 10%; right: 5%; width: 90%; }
-}
-
+/* --- COMPACT HORIZONTAL CTA BUTTONS --- */
 .ctaGroup {
   display: flex;
-  gap: 1rem;
-  margin-top: 3.5rem;
+  flex-direction: row; /* Always horizontal */
+  gap: 0.75rem;
+  margin-top: 2.5rem;
   position: relative;
   z-index: 5;
+  max-width: 440px;
+  width: 100%;
 }
 
 .primaryBtn, .secondaryBtn {
-  padding: 1.1rem 2rem;
-  border-radius: 12px;
+  flex: 1; /* Equal split width */
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.85rem 0.75rem; /* Compact padding */
+  border-radius: 100px; /* Full pill shape matching ShopTeaser */
   font-weight: 700;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
   cursor: pointer;
 }
 
 .primaryBtn {
   background: #fff;
   color: #000;
-  border: 2px solid #fff;
+  border: 1px solid #fff;
 }
 
 .secondaryBtn {
   background: transparent;
   color: #fff;
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.25);
 }
 
 /* Hover Effects */
@@ -178,25 +182,25 @@
   background: #0f6b4a;
   border-color: #0f6b4a;
   color: #fff;
-  transform: translateY(-3px);
+  transform: translateY(-2px);
   box-shadow: 0 10px 20px rgba(15, 107, 74, 0.2);
 }
 
 .secondaryBtn:hover {
   border-color: #fff;
-  background: rgba(255, 255, 255, 0.05);
-  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-2px);
 }
 
-/* Mobile Responsiveness */
+/* Mobile Tweaks */
 @media (max-width: 768px) {
-  .ctaGroup {
-    flex-direction: column;
-    margin-top: 2.5rem;
-  }
-  
+  .title { font-size: 3.5rem; }
+  .imageBackdrop { top: 10%; right: 5%; width: 90%; }
+}
+
+@media (max-width: 380px) {
   .primaryBtn, .secondaryBtn {
-    width: 100%;
-    padding: 1rem;
+    font-size: 0.72rem;
+    padding: 0.75rem 0.5rem;
   }
 }

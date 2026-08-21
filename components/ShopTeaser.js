@@ -54,8 +54,18 @@ export default function ShopTeaser() {
         ))}
       </div>
 
-      <div className={styles.action}>
-        <a href="/shop" className={styles.mainBtn}>Explore the Collection</a>
+      <div className={styles.actionGroup}>
+        <a 
+          href="https://chat.whatsapp.com/JZPHTGvdBsQFpEYGcGO3nc?mode=gi_t" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className={styles.whatsappBtn}
+        >
+          Join Whatsapp Group
+        </a>
+        <a href="/shop" className={styles.mainBtn}>
+          Shop Collection
+        </a>
       </div>
     </section>
   );
