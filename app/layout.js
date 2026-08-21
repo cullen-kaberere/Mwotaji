@@ -33,6 +33,9 @@ export const metadata = {
     icon: "/Mwotaji-favicon2.png",
     apple: "/Mwotaji-favicon2.png",
   },
+  verification: {
+    google: "etG45kuAvz0ACPgFV7aExkvJWUvx8-_XtQHnaTlpDEk",
+  },
   openGraph: {
     title: "Mwotaji Official | Wear Your Purpose",
     description:
