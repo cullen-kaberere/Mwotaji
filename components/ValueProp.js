@@ -1,15 +1,17 @@
-import styles from "./ValueProp.module.css"
+// components/ValueProp.js
+import styles from "./ValueProp.module.css";
 
 export default function ValueProp() {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
+        
         {/* Visual Anchor Side */}
         <div className={styles.visualAnchor}>
           <div className={styles.verticalWatermark}>WHY</div>
           <img 
-            src="/mwotaji5-e.png" 
-            alt="Mwotaji Performance" 
+            src="/mwotaji-rbg-7.png" 
+            alt="Mwotaji Tribe - Performance & Lifestyle" 
             className={styles.heroImg} 
           />
         </div>
@@ -37,7 +39,8 @@ export default function ValueProp() {
             </div>
           </div>
         </div>
+
       </div>
     </section>
-  )
+  );
 }
