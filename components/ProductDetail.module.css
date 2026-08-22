@@ -360,3 +360,34 @@
     font-size: 1.2rem;
   }
 }
+
+/* Add to ProductDetail.module.css */
+
+.sizeHeaderRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.sizeHeaderRow .optionLabel {
+  margin-bottom: 0; /* Reset margin since wrapper handles spacing */
+}
+
+.sizeGuideBtn {
+  background: transparent;
+  border: none;
+  color: #2b8262;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s ease;
+  padding: 0;
+}
+
+.sizeGuideBtn:hover {
+  color: #0f3d2e;
+}
