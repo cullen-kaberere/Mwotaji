@@ -45,7 +45,7 @@ export const metadata = {
     siteName: "Mwotaji Official",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/og-image2.png",
         width: 1200,
         height: 630,
         alt: "Mwotaji Official Collection",
