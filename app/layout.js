@@ -45,7 +45,7 @@ export const metadata = {
     siteName: "Mwotaji Official",
     images: [
       {
-        url: "/og-image2.png",
+        url: "/og-image12.png",
         width: 1200,
         height: 630,
         alt: "Mwotaji Official Collection",
@@ -59,7 +59,7 @@ export const metadata = {
     title: "Mwotaji Official | Premium Sportswear & Streetwear Kenya",
     description:
       "Performance wear for dreamers in motion. Born in Kenya, engineered for community and sport.",
-    images: ["/og-image.jpg"],
+    images: ["/og-image12.png"],
   },
   robots: {
     index: true,
